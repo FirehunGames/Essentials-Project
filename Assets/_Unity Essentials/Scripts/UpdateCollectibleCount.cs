@@ -1,10 +1,14 @@
 using UnityEngine;
 using TMPro;
 using System; // Required for Type handling
+using System.Collections;
 
 public class UpdateCollectibleCount : MonoBehaviour
 {
     private TextMeshProUGUI collectibleText; // Reference to the TextMeshProUGUI component
+
+    // Reference to the LevelCompleted script
+    public LevelCompleted levelCompleted;
 
     void Start()
     {
@@ -14,6 +18,10 @@ public class UpdateCollectibleCount : MonoBehaviour
             Debug.LogError("UpdateCollectibleCount script requires a TextMeshProUGUI component on the same GameObject.");
             return;
         }
+        if (levelCompleted == null)
+        {
+            Debug.LogError("LevelCompleted script reference is not assigned.");
+        }
         UpdateCollectibleDisplay(); // Initial update on start
     }
 
@@ -22,12 +30,12 @@ public class UpdateCollectibleCount : MonoBehaviour
         UpdateCollectibleDisplay();
     }
 
-    private void UpdateCollectibleDisplay()
+    public void UpdateCollectibleDisplay()
     {
         int totalCollectibles = 0;
 
         // Check and count objects of type Collectible
-        Type collectibleType = Type.GetType("Collectible");
+        Type collectibleType = Type.GetType("CollectibleBedroom");
         if (collectibleType != null)
         {
             totalCollectibles += UnityEngine.Object.FindObjectsByType(collectibleType, FindObjectsSortMode.None).Length;
@@ -40,7 +48,24 @@ public class UpdateCollectibleCount : MonoBehaviour
             totalCollectibles += UnityEngine.Object.FindObjectsByType(collectible2DType, FindObjectsSortMode.None).Length;
         }
 
-        // Update the collectible count display
-        collectibleText.text = $"Collectibles remaining: {totalCollectibles}";
+        if (totalCollectibles == 0)
+        {
+            collectibleText.text = "Congratulations, you can proceed to the next level";
+
+            // Open the door
+            if (levelCompleted != null)
+            {
+                levelCompleted.OpenDoor();
+            }
+            else
+            {
+                Debug.LogError("LevelCompleted script reference is null.");
+            }
+        }
+        else
+        {
+            // Update the collectible count display
+            collectibleText.text = $"Diamonds remaining: {totalCollectibles}";
+        }
     }
 }
