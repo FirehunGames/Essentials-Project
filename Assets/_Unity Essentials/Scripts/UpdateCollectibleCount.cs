@@ -8,7 +8,8 @@ public class UpdateCollectibleCount : MonoBehaviour
     private TextMeshProUGUI collectibleText; // Reference to the TextMeshProUGUI component
 
     // Reference to the LevelCompleted script
-    public LevelCompleted levelCompleted;
+    public LevelCompleted bedroomCompleted;
+    public LevelCompleted kitchenCompleted;
 
     void Start()
     {
@@ -18,7 +19,7 @@ public class UpdateCollectibleCount : MonoBehaviour
             Debug.LogError("UpdateCollectibleCount script requires a TextMeshProUGUI component on the same GameObject.");
             return;
         }
-        if (levelCompleted == null)
+        if (bedroomCompleted == null)
         {
             Debug.LogError("LevelCompleted script reference is not assigned.");
         }
@@ -50,12 +51,13 @@ public class UpdateCollectibleCount : MonoBehaviour
 
         if (totalCollectibles == 0)
         {
-            collectibleText.text = "Congratulations, you can proceed to the next level";
+            collectibleText.text = "Congratulations, you can proceed to the next room";
 
             // Open the door
-            if (levelCompleted != null)
+            if (bedroomCompleted != null)
             {
-                levelCompleted.OpenDoor();
+                bedroomCompleted.OpenDoor();
+                //kitchenCompleted.OpenDoor();
             }
             else
             {
