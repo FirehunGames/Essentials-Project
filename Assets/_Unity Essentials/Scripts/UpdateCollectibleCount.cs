@@ -57,7 +57,7 @@ public class UpdateCollectibleCount : MonoBehaviour
             if (bedroomCompleted != null)
             {
                 bedroomCompleted.OpenDoor();
-                //kitchenCompleted.OpenDoor();
+                kitchenCompleted.OpenDoor();
             }
             else
             {
