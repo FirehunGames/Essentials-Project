@@ -11,6 +11,11 @@ public class UpdateCollectibleCount : MonoBehaviour
     public LevelCompleted bedroomCompleted;
     public LevelCompleted kitchenCompleted;
 
+    // Cached types and total counts
+    private Type collectible2DType;
+    private Type collectibleBedroomType;
+    private Type collectibleKitchenType;
+
     void Start()
     {
         collectibleText = GetComponent<TextMeshProUGUI>();
@@ -23,51 +28,86 @@ public class UpdateCollectibleCount : MonoBehaviour
         {
             Debug.LogError("LevelCompleted script reference is not assigned.");
         }
-        UpdateCollectibleDisplay(); // Initial update on start
+        if (kitchenCompleted == null)
+        {
+            Debug.LogError("LevelCompleted script reference is not assigned.");
+        }
+
+        // Cache the types once
+        collectible2DType = Type.GetType("Collectible2D");
+        collectibleBedroomType = Type.GetType("CollectibleBedroom");
+        collectibleKitchenType = Type.GetType("CollectibleKitchen");
+
+        // Initial update on start
+        UpdateCollectibleDisplay();
     }
 
     void Update()
     {
+        // Here you might want to add a condition or event to call UpdateCollectibleDisplay, instead of calling it every frame
         UpdateCollectibleDisplay();
     }
 
     public void UpdateCollectibleDisplay()
     {
+        int totalBedroomCollectibles = 0;
         int totalCollectibles = 0;
-
-        // Check and count objects of type Collectible
-        Type collectibleType = Type.GetType("CollectibleBedroom");
-        if (collectibleType != null)
-        {
-            totalCollectibles += UnityEngine.Object.FindObjectsByType(collectibleType, FindObjectsSortMode.None).Length;
-        }
+        int totalKitchenCollectibles = 0;
 
         // Optionally, check and count objects of type Collectible2D as well if needed
-        Type collectible2DType = Type.GetType("Collectible2D");
         if (collectible2DType != null)
         {
             totalCollectibles += UnityEngine.Object.FindObjectsByType(collectible2DType, FindObjectsSortMode.None).Length;
         }
 
-        if (totalCollectibles == 0)
+        // Check and count objects of type CollectibleBedroom
+        if (collectibleBedroomType != null)
         {
-            collectibleText.text = "Congratulations, you can proceed to the next room";
+            totalBedroomCollectibles += UnityEngine.Object.FindObjectsByType(collectibleBedroomType, FindObjectsSortMode.None).Length;
+        }
 
-            // Open the door
+        // Check and count objects of type CollectibleKitchen
+        if (collectibleKitchenType != null)
+        {
+            totalKitchenCollectibles += UnityEngine.Object.FindObjectsByType(collectibleKitchenType, FindObjectsSortMode.None).Length;
+        }
+
+        if (totalBedroomCollectibles == 0)
+        {
+
+            // Open the door to the bedroom
             if (bedroomCompleted != null)
             {
                 bedroomCompleted.OpenDoor();
-                kitchenCompleted.OpenDoor();
             }
             else
             {
                 Debug.LogError("LevelCompleted script reference is null.");
             }
+
+            if (totalKitchenCollectibles == 0)
+            {
+                collectibleText.text = "Congratulations, you can proceed to the next room";
+
+                // Open the door to the kitchen
+                if (kitchenCompleted != null)
+                {
+                    kitchenCompleted.OpenDoor();
+                }
+                else
+                {
+                    Debug.LogError("LevelCompleted script reference is null.");
+                }
+            }
+            else
+            {
+                collectibleText.text = $"Fish remaining: {totalKitchenCollectibles}";
+            }
         }
         else
         {
             // Update the collectible count display
-            collectibleText.text = $"Diamonds remaining: {totalCollectibles}";
+            collectibleText.text = $"Diamonds remaining: {totalBedroomCollectibles}";
         }
     }
 }
