@@ -1,13 +1,17 @@
 using UnityEngine;
+using System.Collections;
+
 
 // Controls player movement and rotation.
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5.0f; // Set player's movement speed.
     public float rotationSpeed = 120.0f; // Set player's rotation speed.
+    public float jumpForce = 5.0f; // Set player's jump force.
+    public float jumpCooldown = 1.0f; // Set the cooldown time between jumps.
 
     private Rigidbody rb; // Reference to player's Rigidbody.
-    public float jumpForce = 5.0f;
+    private bool canJump = true; // Flag to control jump cooldown.
 
     // Start is called before the first frame update
     private void Start()
@@ -16,16 +20,14 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && canJump)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
-            
+            StartCoroutine(JumpCooldown());
         }
-        
     }
-
 
     // Handle physics-based movement and rotation.
     private void FixedUpdate()
@@ -39,5 +41,12 @@ public class PlayerController : MonoBehaviour
         float turn = Input.GetAxis("Horizontal") * rotationSpeed * Time.fixedDeltaTime;
         Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
         rb.MoveRotation(rb.rotation * turnRotation);
+    }
+
+    private IEnumerator JumpCooldown()
+    {
+        canJump = false;
+        yield return new WaitForSeconds(jumpCooldown);
+        canJump = true;
     }
 }
