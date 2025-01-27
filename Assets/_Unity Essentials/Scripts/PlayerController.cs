@@ -27,10 +27,16 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
             StartCoroutine(JumpCooldown());
+            //animator.SetFloat("Fast", 1);
         }
+        //if (Input.GetButtonUp("Jump")){
+        //    animator.SetFloat("Fast", 0);
+        //}
+
+        
 
         // Update the isWalking parameter based on player movement input
-        float moveVertical = Input.GetAxis("Vertical");
+            float moveVertical = Input.GetAxis("Vertical");
         bool isWalking = Mathf.Abs(moveVertical) > 0.1f; // Adjust threshold as needed
         //animator.SetBool("isWalking", isWalking);
 
