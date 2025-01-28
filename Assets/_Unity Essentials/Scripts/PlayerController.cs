@@ -5,7 +5,7 @@ using System.Collections; // Required for IEnumerator
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5.0f; // Set player's movement speed.
-    public float rotationSpeed = 120.0f; // Set player's rotation speed.
+    public float rotationSpeed = 200.0f; // Set player's rotation speed.
     public float jumpForce = 5.0f; // Set player's jump force.
     public float jumpCooldown = 1.0f; // Set the cooldown time between jumps.
 
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         {
             //run
             animator.SetFloat("Speed", 1);
-            speed = 5f;
+            speed = 2f;
         }       
     }
 

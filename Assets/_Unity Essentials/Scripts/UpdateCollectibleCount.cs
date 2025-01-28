@@ -11,6 +11,7 @@ public class UpdateCollectibleCount : MonoBehaviour
     public LevelCompleted bedroomCompleted;
     public LevelCompleted kitchenCompleted;
     public LevelCompleted roomCompleted;
+    public LevelCompleted room2Completed;
 
     // Cached types and total counts
     private Type collectible2DType;
@@ -38,6 +39,10 @@ public class UpdateCollectibleCount : MonoBehaviour
         {
             Debug.LogError("Room LevelCompleted script reference is not assigned.");
         }
+        if (room2Completed == null)
+        {
+            Debug.LogError("Room LevelCompleted script reference is not assigned.");
+        }
 
         // Cache the types once
         collectible2DType = Type.GetType("Collectible2D");
@@ -48,6 +53,7 @@ public class UpdateCollectibleCount : MonoBehaviour
         // Initial update on start
         UpdateCollectibleDisplay();
     }
+
 
     void Update()
     {
@@ -62,19 +68,16 @@ public class UpdateCollectibleCount : MonoBehaviour
         int totalKitchenCollectibles = 0;
         int totalRoomCollectibles = 0;
 
-        // Optionally, check and count objects of type Collectible2D as well if needed
         if (collectible2DType != null)
         {
             totalCollectibles += UnityEngine.Object.FindObjectsByType(collectible2DType, FindObjectsSortMode.None).Length;
         }
 
-        // Check and count objects of type CollectibleBedroom
         if (collectibleBedroomType != null)
         {
             totalBedroomCollectibles += UnityEngine.Object.FindObjectsByType(collectibleBedroomType, FindObjectsSortMode.None).Length;
         }
 
-        // Check and count objects of type CollectibleKitchen
         if (collectibleKitchenType != null)
         {
             totalKitchenCollectibles += UnityEngine.Object.FindObjectsByType(collectibleKitchenType, FindObjectsSortMode.None).Length;
@@ -85,43 +88,52 @@ public class UpdateCollectibleCount : MonoBehaviour
             totalRoomCollectibles += UnityEngine.Object.FindObjectsByType(collectibleRoomType, FindObjectsSortMode.None).Length;
         }
 
+        /*Debug.Log($"Bedroom Collectibles: {totalBedroomCollectibles}");
+        Debug.Log($"Kitchen Collectibles: {totalKitchenCollectibles}");
+        Debug.Log($"Room Collectibles: {totalRoomCollectibles}");*/
+
         if (totalBedroomCollectibles == 0)
         {
-
-            // Open the door to the bedroom
             if (bedroomCompleted != null)
             {
                 bedroomCompleted.OpenDoor();
             }
             else
             {
-                Debug.LogError("LevelCompleted script reference is null.");
+                Debug.LogError("Bedroom LevelCompleted script reference is null.");
             }
 
             if (totalKitchenCollectibles == 0)
             {
-                //collectibleText.text = "Congratulations, you can proceed to the next room";
-
-                // Open the door to the kitchen
                 if (kitchenCompleted != null)
                 {
                     kitchenCompleted.OpenDoor();
                 }
                 else
                 {
-                    Debug.LogError("LevelCompleted script reference is null.");
+                    Debug.LogError("Kitchen LevelCompleted script reference is null.");
                 }
 
                 if (totalRoomCollectibles == 0)
                 {
-                    if (roomCompleted != null)
+                    if (roomCompleted != null && room2Completed != null)
                     {
                         roomCompleted.OpenDoor();
+                        room2Completed.OpenDoor();
                     }
                     else
                     {
-                        Debug.LogError("LevelCompleted script reference is null.");
-                    }                
+                        Debug.LogError("Room LevelCompleted script reference is null.");
+                    }
+
+                    //collectibleText.text = $"Find the secret code!";
+
+                    // Hide collectibleText and its parent image
+                    collectibleText.gameObject.SetActive(false);
+                    collectibleText.transform.parent.gameObject.SetActive(false);
+
+                    //should play a SECRET discovered sound here
+
                 }
                 else
                 {
@@ -136,8 +148,8 @@ public class UpdateCollectibleCount : MonoBehaviour
         }
         else
         {
-            // Update the collectible count display
             collectibleText.text = $"Diamonds remaining: {totalBedroomCollectibles}";
         }
     }
+
 }
