@@ -13,11 +13,19 @@ public class PlayerController : MonoBehaviour
     private Animator animator; // Reference to player's Animator.
     private bool canJump = true; // Flag to control jump cooldown.
 
+    //Purr settings
+    /*public AudioClip audioClip;
+    private AudioSource audioSource;
+    private bool canPurr = true;
+    public int purrCooldown = 7;*/
+
     // Start is called before the first frame update
     private void Start()
     {
         rb = GetComponent<Rigidbody>(); // Access player's Rigidbody.
         animator = GetComponent<Animator>(); // Access player's Animator.
+        /*AudioSource[] audioSources = GetComponents<AudioSource>();
+        audioSource = audioSources[1];*/
     }
 
     // Update is called once per frame
@@ -45,18 +53,26 @@ public class PlayerController : MonoBehaviour
         {
             //idle
             animator.SetFloat("Speed", 0);
+            /*canPurr = false;
+            StartCoroutine(PurrCooldown());*/
+            
+            
         }
         else if (!Input.GetKey(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.LeftShift))
         {
             //walk
             animator.SetFloat("Speed", 0.3f);
             speed = 1f;
+            /*canPurr = false;
+            audioSource.Stop();*/
         }
         else if (Input.GetKey(KeyCode.LeftShift))
         {
             //run
             animator.SetFloat("Speed", 1);
             speed = 2f;
+            /*canPurr = false;
+            audioSource.Stop();*/
         }       
     }
 
@@ -80,4 +96,14 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(jumpCooldown);
         canJump = true;
     }
+    /*private IEnumerator PurrCooldown()
+    {
+        canPurr = true;
+        yield return new WaitForSeconds(purrCooldown);
+        if (canPurr)
+        {
+            audioSource.PlayOneShot(audioClip);
+        }
+        
+    }*/
 }

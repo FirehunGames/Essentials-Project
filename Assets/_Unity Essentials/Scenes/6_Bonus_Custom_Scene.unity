@@ -487,6 +487,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -781,6 +786,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -874,6 +884,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
@@ -2722,6 +2737,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -2975,6 +2995,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
@@ -3483,6 +3508,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1550728041}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b0befbd5b40c17d4c90a8db749239bb1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1550728044}
   m_SourcePrefab: {fileID: 100100000, guid: b0befbd5b40c17d4c90a8db749239bb1, type: 3}
 --- !u!1001 &319212162
 PrefabInstance:
@@ -3858,6 +3887,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 2619775269853378942, guid: 0078da970dda26c4c8adb24c70c8fa42,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3214432352501346504, guid: 0078da970dda26c4c8adb24c70c8fa42,
         type: 3}
@@ -5869,6 +5903,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -6902,6 +6941,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -7012,7 +7056,6 @@ GameObject:
   m_Component:
   - component: {fileID: 556643786}
   - component: {fileID: 556643785}
-  - component: {fileID: 556643784}
   - component: {fileID: 556643783}
   - component: {fileID: 556643787}
   m_Layer: 0
@@ -7066,14 +7109,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!81 &556643784
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556643782}
-  m_Enabled: 1
 --- !u!20 &556643785
 Camera:
   m_ObjectHideFlags: 0
@@ -9643,6 +9678,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -9838,6 +9878,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
@@ -10477,6 +10522,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -10570,6 +10620,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
@@ -10672,6 +10727,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
@@ -10829,6 +10889,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
@@ -12760,6 +12825,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -12901,6 +12971,228 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.17816448, y: 0.3242254, z: 0.43901062}
   m_Center: {x: 0.00039434433, y: 0.15396582, z: -0.0060834885}
+--- !u!114 &932685050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932685044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297646e08f7ec9748acd1f74ae7d1f69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundClips:
+  - {fileID: 8300000, guid: 959dfb17d252d4240b7064604374c1f2, type: 3}
+  - {fileID: 8300000, guid: 2f13788bd94731d479bf8f6d8a838d05, type: 3}
+  - {fileID: 8300000, guid: ed8b2f3ea234abc4186eab57e17a06dc, type: 3}
+  - {fileID: 8300000, guid: 7789f175e3a332e4a98312e7495f4028, type: 3}
+  - {fileID: 8300000, guid: 38b1af98c2338044f973e3de1f24919b, type: 3}
+  - {fileID: 8300000, guid: 2b60c0e0e2b59e7468aba49b4f503e98, type: 3}
+  - {fileID: 8300000, guid: ea3d8d38a93638a418f81fbc0222bcb0, type: 3}
+--- !u!81 &932685051
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932685044}
+  m_Enabled: 1
+--- !u!82 &932685052
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932685044}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.25
+  m_Pitch: 0.88
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &932685053
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932685044}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &934969434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0c722d2f46b524df68da1dbc2fca9a79,
@@ -13297,6 +13589,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -13390,6 +13687,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
@@ -13648,6 +13950,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -13802,6 +14109,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
@@ -14136,6 +14448,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -14229,6 +14546,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
@@ -14713,6 +15035,22 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 932685049}
+    - targetCorrespondingSourceObject: {fileID: 8659100047398732180, guid: c287dccaa72674b4c8142d990e0f3f01,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 932685050}
+    - targetCorrespondingSourceObject: {fileID: 8659100047398732180, guid: c287dccaa72674b4c8142d990e0f3f01,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 932685051}
+    - targetCorrespondingSourceObject: {fileID: 8659100047398732180, guid: c287dccaa72674b4c8142d990e0f3f01,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 932685052}
+    - targetCorrespondingSourceObject: {fileID: 8659100047398732180, guid: c287dccaa72674b4c8142d990e0f3f01,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 932685053}
   m_SourcePrefab: {fileID: 100100000, guid: c287dccaa72674b4c8142d990e0f3f01, type: 3}
 --- !u!1001 &1080995631
 PrefabInstance:
@@ -14791,6 +15129,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
@@ -15067,6 +15410,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
@@ -16420,6 +16768,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -17747,6 +18100,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -18760,6 +19118,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -19371,6 +19734,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
@@ -20555,6 +20923,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -20648,6 +21021,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
@@ -21099,6 +21477,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -21367,6 +21750,103 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &1550728044
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550728036}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7b6ef22b2f300f64abed5cd51977e6d6, type: 3}
+  m_Resource: {fileID: 8300000, guid: 7b6ef22b2f300f64abed5cd51977e6d6, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.301
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1559479420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21444,6 +21924,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
@@ -22178,6 +22663,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
@@ -23744,6 +24234,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -24199,6 +24694,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -24555,6 +25055,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
@@ -26086,6 +26591,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -26202,6 +26712,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
@@ -26990,6 +27505,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
       propertyPath: m_TagString
       value: RoomCollectible
       objectReference: {fileID: 0}
@@ -27083,6 +27603,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
@@ -28961,6 +29486,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db924e5f6e1c9834da4d8e265fe3e6fd,
         type: 3}
