@@ -6,6 +6,7 @@ using System.Collections;
 public class UpdateCollectibleCount : MonoBehaviour
 {
     private TextMeshProUGUI collectibleText; // Reference to the TextMeshProUGUI component
+    public ParkCodeInputField parkCodeInputField; //Reference to the TMP_input on the ParkCodeInputField script
 
     // Reference to the LevelCompleted script
     public LevelCompleted bedroomCompleted;
@@ -88,9 +89,6 @@ public class UpdateCollectibleCount : MonoBehaviour
             totalRoomCollectibles += UnityEngine.Object.FindObjectsByType(collectibleRoomType, FindObjectsSortMode.None).Length;
         }
 
-        /*Debug.Log($"Bedroom Collectibles: {totalBedroomCollectibles}");
-        Debug.Log($"Kitchen Collectibles: {totalKitchenCollectibles}");
-        Debug.Log($"Room Collectibles: {totalRoomCollectibles}");*/
 
         if (totalBedroomCollectibles == 0)
         {
@@ -120,6 +118,19 @@ public class UpdateCollectibleCount : MonoBehaviour
                     {
                         roomCompleted.OpenDoor();
                         room2Completed.OpenDoor();
+
+                        // Call the ShowInputFieldAndImage method
+                        if (parkCodeInputField != null && parkCodeInputField.gameOver == false)
+                        {
+                            parkCodeInputField.gameOver = true;
+                            parkCodeInputField.ShowInputFieldAndImage();                           
+                        }
+                        else
+                        {
+                            parkCodeInputField.HideInputFieldAndImage();
+                            Debug.LogError("ParkCodeInputField reference is not assigned!");
+                        }
+
                     }
                     else
                     {
@@ -150,6 +161,16 @@ public class UpdateCollectibleCount : MonoBehaviour
         {
             collectibleText.text = $"Diamonds remaining: {totalBedroomCollectibles}";
         }
+    }   
+
+    private IEnumerator congratulationsMessage(string message)
+    {
+        //AQUI ESTABA*
+
+        // Wait for a few seconds
+        yield return new WaitForSeconds(3f);
+
+
     }
 
 }
