@@ -10,12 +10,14 @@ public class UpdateCollectibleCount : MonoBehaviour
     public TMP_Text congratulations; // Reference to the TMP_Text Congratulations
     private int congrats = 0;
     private string congratsMessage = "";
+    private bool gameFinished = false;
 
     // Reference to the LevelCompleted script
     public LevelCompleted bedroomCompleted;
     public LevelCompleted kitchenCompleted;
     public LevelCompleted roomCompleted;
     public LevelCompleted room2Completed;
+    public LevelCompleted parkCompleted;
 
     // Cached types and total counts
     private Type collectible2DType;
@@ -62,6 +64,8 @@ public class UpdateCollectibleCount : MonoBehaviour
             Debug.LogError("Room LevelCompleted script reference is not assigned.");
         if (room2Completed == null)
             Debug.LogError("Room LevelCompleted script reference is not assigned.");
+        if (parkCompleted == null)
+            Debug.LogError("Park LevelCompleted script reference is not assigned.");
     }
 
     private void CacheCollectibleTypes()
@@ -138,7 +142,7 @@ public class UpdateCollectibleCount : MonoBehaviour
             if (congrats == 0)
             {
                 congrats = 1;
-                congratsMessage = "BEDROOM COMPLETED!<br><br>PROCEED TO THE NEXT ROOM";
+                congratsMessage = "BEDROOM COMPLETED";
                 StartCoroutine(CongratulationsMessage(congratsMessage, false));
             }
         }
@@ -156,7 +160,7 @@ public class UpdateCollectibleCount : MonoBehaviour
             if (congrats == 1)
             {
                 congrats = 2;
-                congratsMessage = "KITCHEN COMPLETED!<br><br>PROCEED TO THE NEXT ROOM";
+                congratsMessage = "KITCHEN COMPLETED";
                 StartCoroutine(CongratulationsMessage(congratsMessage, false));
             }
         }
@@ -174,9 +178,9 @@ public class UpdateCollectibleCount : MonoBehaviour
             room2Completed.OpenDoor();
             if (congrats == 2)
             {
-                congratsMessage = "LIVING ROOM COMPLETED!<br><br>FIND THE SECRET CODE IN THE PARK";
+                congratsMessage = "LIVING ROOM COMPLETED";
                 StartCoroutine(CongratulationsMessage(congratsMessage, true));
-                HideCollectibleText();
+                //HideCollectibleText();
             }
 
             ShowParkCodeInputField();
@@ -186,38 +190,41 @@ public class UpdateCollectibleCount : MonoBehaviour
             Debug.LogError("Room LevelCompleted script reference is null.");
         }
 
-        if (congrats == 3)
+        /*if (congrats == 3)
         {
             collectibleText.gameObject.SetActive(false);
             collectibleText.transform.parent.gameObject.SetActive(false);
-        }
+        }*/
     }
 
-    private void HideCollectibleText()
+    /*private void HideCollectibleText()
     {
         collectibleText.canvasRenderer.SetAlpha(0);
         foreach (CanvasRenderer renderer in collectibleText.transform.parent.GetComponentsInChildren<CanvasRenderer>())
         {
             renderer.SetAlpha(0);
         }
-    }
+    }*/
 
     private void ShowParkCodeInputField()
     {
         if (parkCodeInputField != null && !parkCodeInputField.gameOver)
         {
             parkCodeInputField.ShowInputFieldAndImage();
+            collectibleText.text = "Find the secret code outside";
         }
         else
         {
-            parkCodeInputField.HideInputFieldAndImage();
-            Debug.LogError("ParkCodeInputField reference is not assigned!");
+            if (gameFinished == false)
+            {
+                StartCoroutine(HideParkInputField(gameFinished));
+            }           
         }
     }
 
     private IEnumerator CongratulationsMessage(string congratsMessage, bool lastTime)
     {
-        Debug.Log("coroutine started and the congrats should be displayed");
+        //Debug.Log("coroutine started and the congrats should be displayed");
 
         congratulations.text = congratsMessage;
         congratulations.gameObject.SetActive(true);
@@ -225,7 +232,7 @@ public class UpdateCollectibleCount : MonoBehaviour
 
         yield return new WaitForSeconds(5f);
 
-        Debug.Log("coroutine ended and the congrats shouldn't be displayed");
+        //Debug.Log("coroutine ended and the congrats shouldn't be displayed");
 
         congratulations.gameObject.SetActive(false);
         congratulations.transform.parent.gameObject.SetActive(false);
@@ -233,5 +240,24 @@ public class UpdateCollectibleCount : MonoBehaviour
         {
             congrats = 3;
         }
+    }
+
+    private IEnumerator HideParkInputField(bool gameFinished)
+    {
+        gameFinished = true;
+
+        collectibleText.canvasRenderer.SetAlpha(0);
+        foreach (CanvasRenderer renderer in collectibleText.transform.parent.GetComponentsInChildren<CanvasRenderer>())
+        {
+            renderer.SetAlpha(0);
+        }
+
+        yield return new WaitForSeconds(2f);
+
+        parkCodeInputField.HideInputFieldAndImage();
+
+        collectibleText.gameObject.SetActive(false);
+        collectibleText.transform.parent.gameObject.SetActive(false);
+        parkCompleted.gameObject.SetActive(false);
     }
 }

@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     private Animator animator; // Reference to player's Animator.
     private bool canJump = true; // Flag to control jump cooldown.
 
+    public Camera mainCamera; //Reference to the main camera
+    public Camera frontCamera; //Reference to the front camera
+
     //Purr settings
     /*public AudioClip audioClip;
     private AudioSource audioSource;
@@ -41,10 +44,17 @@ public class PlayerController : MonoBehaviour
         //    animator.SetFloat("Fast", 0);
         //}
 
-        
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            SwitchToFrontCamera(false, true);
+        }
+        else if (Input.GetKeyUp(KeyCode.Z))
+        {
+            SwitchToFrontCamera(true, false);
+        }
 
         // Update the isWalking parameter based on player movement input
-            float moveVertical = Input.GetAxis("Vertical");
+        float moveVertical = Input.GetAxis("Vertical");
         bool isWalking = Mathf.Abs(moveVertical) > 0.1f; // Adjust threshold as needed
         //animator.SetBool("isWalking", isWalking);
 
@@ -106,4 +116,18 @@ public class PlayerController : MonoBehaviour
         }
         
     }*/
+
+    private void SwitchToFrontCamera(bool mainCameraOn, bool frontCameraOn)
+    {
+        if (frontCamera != null && mainCamera != null)
+        {
+            mainCamera.gameObject.SetActive(mainCameraOn); // Disable the main camera
+            frontCamera.gameObject.SetActive(frontCameraOn); // Enable the front camera
+        }
+        else
+        {
+            Debug.LogError("Main camera or front camera reference is not assigned!");
+        }
+    }
+
 }

@@ -35,7 +35,7 @@ public class ParkCodeInputField : MonoBehaviour
             }
             else
             {
-                Debug.Log("game over is true? but why?");
+                Debug.Log("gg");
             }
             
             
