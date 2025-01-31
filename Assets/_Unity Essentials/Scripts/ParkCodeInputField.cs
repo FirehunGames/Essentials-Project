@@ -28,17 +28,29 @@ public class ParkCodeInputField : MonoBehaviour
         if (text.Length == 4)
         {
             ValidateCode();
-            if(gameOver == false)
+            if (gameOver == false)
             {
                 // Start the coroutine to clear the input field after a delay
                 StartCoroutine(ClearInputFieldAfterDelay(0.5f));
             }
+            else
+            {
+                Debug.Log("game over is true? but why?");
+            }
+            
+            
             
         }
         else if (text.Length > 4)
         {
+            // Temporarily remove the listener to avoid recursion
+            codeInputField.onValueChanged.RemoveListener(OnInputFieldChanged);
+
             // If more than 4 characters are entered, truncate the text
             codeInputField.text = text.Substring(0, 4);
+
+            // Re-add the listener
+            codeInputField.onValueChanged.AddListener(OnInputFieldChanged);
         }
     }
 

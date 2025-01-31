@@ -20,6 +20,8 @@ public class UpdateCollectibleCount : MonoBehaviour
     private Type collectibleKitchenType;
     private Type collectibleRoomType;
 
+    //private bool coroutine = true;
+
     void Start()
     {
         collectibleText = GetComponent<TextMeshProUGUI>();
@@ -122,7 +124,7 @@ public class UpdateCollectibleCount : MonoBehaviour
                         // Call the ShowInputFieldAndImage method
                         if (parkCodeInputField != null && parkCodeInputField.gameOver == false)
                         {
-                            parkCodeInputField.gameOver = true;
+                            //parkCodeInputField.gameOver = true;
                             parkCodeInputField.ShowInputFieldAndImage();                           
                         }
                         else
@@ -149,6 +151,7 @@ public class UpdateCollectibleCount : MonoBehaviour
                 else
                 {
                     collectibleText.text = $"Coins remaining: {totalRoomCollectibles}";
+                    //StartCoroutine(congratulationsMessage("Congratulations, proceed to the next room!", $"Coins remaining: {totalRoomCollectibles}"));
                 }
 
             }
@@ -163,14 +166,15 @@ public class UpdateCollectibleCount : MonoBehaviour
         }
     }   
 
-    private IEnumerator congratulationsMessage(string message)
+    /*private IEnumerator congratulationsMessage(string congratulationMessage, string oldMessage)
     {
-        //AQUI ESTABA*
+        collectibleText.text = congratulationMessage;
+
 
         // Wait for a few seconds
         yield return new WaitForSeconds(3f);
 
-
-    }
+        collectibleText.text = oldMessage;
+    }*/
 
 }
